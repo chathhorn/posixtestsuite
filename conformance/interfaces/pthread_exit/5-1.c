@@ -135,7 +135,7 @@ void * threaded (void * arg)
 	ret = pthread_setspecific(tld[2], arg);
 	if (ret != 0)  {  UNRESOLVED(ret, "Failed to set TLD data");  }
 	
-	return  NULL + 1;
+	return  ((char*)NULL) + 1;
 	
 	FAILED("return did not terminate the thread (oO)");
 	return NULL;
@@ -196,7 +196,7 @@ int main (int argc, char *argv[])
 				ret = pthread_join(child, &rval);
 				if (ret != 0)  {  UNRESOLVED(ret, "Unable to join a thread");  }
 					
-				if (rval != (NULL+1))
+				if (rval != (((char*)NULL)+1))
 				{
 					FAILED("pthread_join() did not retrieve the pthread_exit() param");
 				}

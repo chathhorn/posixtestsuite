@@ -123,7 +123,7 @@ void * threaded (void * arg)
 	ret = atexit(at2);
 	if (ret != 0)  {  UNRESOLVED(ret, "Failed to register an atexit() routine");  }
 
-	pthread_exit(NULL + 1);
+	pthread_exit(((char*)NULL) + 1);
 	
 	FAILED("pthread_exit() did not terminate the thread");
 	return NULL;
@@ -175,7 +175,7 @@ int main (int argc, char *argv[])
 				ret = pthread_join(child, &rval);
 				if (ret != 0)  {  UNRESOLVED(ret, "Unable to join a thread");  }
 					
-				if (rval != (NULL+1))
+				if (rval != (((char*)NULL)+1))
 				{
 					FAILED("pthread_join() did not retrieve the pthread_exit() param");
 				}

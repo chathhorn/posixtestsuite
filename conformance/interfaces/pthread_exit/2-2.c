@@ -119,7 +119,7 @@ void * threaded (void * arg)
 	pthread_cleanup_push(clnp2, NULL);
 	pthread_cleanup_push(clnp1, NULL);
 	
-	pthread_exit(NULL + 1);
+	pthread_exit(((char*)NULL) + 1);
 	
 	pthread_cleanup_pop(0);
 	pthread_cleanup_pop(0);
@@ -179,7 +179,7 @@ int main (int argc, char *argv[])
 				ret = pthread_join(child, &rval);
 				if (ret != 0)  {  UNRESOLVED(ret, "Unable to join a thread");  }
 					
-				if (rval != (NULL+1))
+				if (rval != (((char*)NULL)+1))
 				{
 					FAILED("pthread_join() did not retrieve the pthread_exit() param");
 				}
