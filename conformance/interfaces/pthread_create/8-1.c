@@ -27,7 +27,7 @@
 
 sigset_t th_pendingset, th_sigmask; 
 
-void *a_thread_func()
+void *a_thread_func(void *arg)
 {
 	/* Obtain the signal mask of this thread. */
 	pthread_sigmask(SIG_SETMASK, NULL, &th_sigmask);

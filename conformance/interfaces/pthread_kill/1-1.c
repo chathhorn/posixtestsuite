@@ -54,7 +54,7 @@ void handler() {
 	return;
 }
 
-void *a_thread_func()
+void *a_thread_func(void *arg)
 {
 	struct sigaction act;
 	act.sa_flags = 0;

@@ -44,7 +44,7 @@ int is_changed(sigset_t set, int sig) {
 	return 0;
 }
 
-void *a_thread_func() {
+void *a_thread_func(void *arg) {
 
 	sigset_t actl, oactl;
 

@@ -22,7 +22,7 @@
 #include <time.h>
 #include "posixtest.h"
 
-void *a_thread_func()
+void *a_thread_func(void *arg)
 {
 	clockid_t cpuclock;
 	struct timespec ts = {.tv_sec = 1, .tv_nsec = 1};

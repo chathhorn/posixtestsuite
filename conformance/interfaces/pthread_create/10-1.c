@@ -55,7 +55,7 @@ int created_thread;	/* Flag indicating that the thread start routine was reached
 int segfault_flag; 	/* Flag indicating that a segmentation fault occured. */
 
 /* Thread's start routine. */
-void *a_thread_func()
+void *a_thread_func(void *arg)
 {
 	/* Indicate that the thread start routine was reached.  If it was reached, the test
 	 * fails, as the thread should have not been created in the first place. */
