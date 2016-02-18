@@ -41,7 +41,7 @@ void *a_thread_func(void *arg)
 int main()
 {
 	pthread_t new_th;
-	int *value_ptr;
+	void *value_ptr;
 
 	/* Initializing variables. */
 	value_ptr=0;
@@ -59,7 +59,7 @@ int main()
 		sleep(1);
 
 	/* Wait for thread to return */
-	if(pthread_join(new_th, (void*)&value_ptr) != 0)
+	if(pthread_join(new_th, &value_ptr) != 0)
 	{
 		perror("Error in pthread_join()\n");
 		return PTS_UNRESOLVED;
